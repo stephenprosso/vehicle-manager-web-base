@@ -29,19 +29,19 @@
 
         function getById(id) {
             return $http
-                .get(apiUrl + 'customers' + id)
+                .get(apiUrl + 'customers/' + id)
                 .then(function(response) {
                     return response.data;
                 });
         }
 
         function update(id, customer) {
-            return $http.put(apiUrl + 'customers' + id, customer);
+            return $http.put(apiUrl + 'customers/' + id, customer);
         }
 
         function create(customer) {
             return $http
-                .post(apiUrl + 'customers', customer)
+                .post(apiUrl + 'customers/', customer)
                 .then(function(response) {
                     return response.data;
                 });

@@ -4,6 +4,7 @@
     angular
         .module('app', [
             'ui.router',
+            'oitozero.ngSweetAlert',
             'app.dashboard',
             'app.customers',
             'app.vehicles',
@@ -63,7 +64,7 @@
                     .state('sales.grid', {
                         url: '/grid',
                         controller: 'SalesGridController as salesGridCtrl',
-                        templateUrl: 'app/vehicles/vehicles.grid.html'
+                        templateUrl: 'app/sales/sales.grid.html'
                     })
                     .state('sales.detail', {
                         url: '/detail/:id',

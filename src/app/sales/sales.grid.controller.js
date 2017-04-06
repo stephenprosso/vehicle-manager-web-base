@@ -14,7 +14,11 @@
         activate();
 
         function activate() {
-
+            salesFactory
+                .getAll()
+                .then(function(sales) {
+                    vm.sales = sales;
+                });
         }
     }
 })();

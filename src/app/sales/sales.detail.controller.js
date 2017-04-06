@@ -5,16 +5,20 @@
         .module('app.sales')
         .controller('SalesDetailsController', SalesDetailsController);
 
-    SalesDetailsController.$inject = ['salesFactory'];
+    SalesDetailsController.$inject = ['salesFactory','$stateParams', 'SweetAlert'];
 
     /* @ngInject */
-    function SalesDetailsController(salesFactory) {
+    function SalesDetailsController(salesFactory, $stateParams, SweetAlert) {
         var vm = this;
 
         activate();
 
         function activate() {
-
+            salesFactory
+                .getById($stateParams.id)
+                .then(function(sale) {
+                    vm.sale = sale;
+                });
         }
     }
 })();
