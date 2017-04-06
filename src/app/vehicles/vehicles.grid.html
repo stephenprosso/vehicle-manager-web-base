@@ -2,6 +2,7 @@
 
     <thead>
         <tr>
+          <th></th>
             <th>Make</th>
             <th>Model</th>
             <th>Year</th>
@@ -14,19 +15,20 @@
     </thead>
     <tbody>
         <tr ng-repeat="vehicle in vehiclesGridCtrl.vehicles">
+          <td>{{$index+1}}</td>
             <td>{{vehicle.make}}</td>
             <td>{{vehicle.model}}</td>
             <td>{{vehicle.year}}</td>
             <td>{{vehicle.color}}</td>
-            <td>{{vehicle.type}}</td>
-            <td>{{vehicle.retailPrice}}</td>
+            <td>{{vehicle.vehicleType}}</td>
+            <td>{{vehicle.retailPrice | currency: "$"}}</td>
             <td>
-                <a ui-sref="vehicles.detail({id: VehicleId})" class="btn btn-primary">
+                <a ui-sref="vehicles.detail({id: vehicle.vehicleId})" class="btn btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>
                 </a>
             </td>
             <td>
-                <a href="" class="btn btn-danger">
+                <a ng-click="vehiclesGridCtrl.remove(vehicle)" class="btn btn-danger">
                     <i class="glyphicon glyphicon-trash"></i>
                 </a>
             </td>

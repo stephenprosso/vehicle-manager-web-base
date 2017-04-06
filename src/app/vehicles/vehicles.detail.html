@@ -1,0 +1,50 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Edit Vehicle Information
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleMake">Vehicle Make</label>
+                    <input id="vehicleMake" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.make">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleModel">Vehicle Model</label>
+                    <input id="vehicleModel" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.model">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleColor">Color</label>
+                    <input id="vehicleColor" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.color">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleType">Type</label>
+                    <input id="vehicleType" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.vehicleType">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleYear">Year</label>
+                    <input id="vehicleYear" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.year">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="vehicleRetailPrice">Retail Price</label>
+                    <input id="vehicleRetailPrice" type="text" class="form-control" ng-model="vehiclesDetailsCtrl.vehicle.retailPrice">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+      <button class="btn btn-success pull-right" ng-click="vehiclesDetailCtrl.save()">
+        Save <i class="glyphicon glyphicon-save"></i>
+      </button>
+    </div>
+</div>

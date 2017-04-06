@@ -1,0 +1,68 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{salesDetailsCtrl.title}}
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="">Customer</label>
+                    <ui-select ng-model="salesDetailsCtrl.selectedCustomer" theme="bootstrap">
+                        <ui-select-match placeholder="Search a customer...">{{$select.selected.firstName}} {{$select.selected.lastName}}</ui-select-match>
+                        <ui-select-choices repeat="customer in salesDetailsCtrl.customers | filter: $select.search">
+                            <div ng-bind-html="customer.firstName + ' ' + customer.lastName | highlight: $select.search"></div>
+                            <small ng-bind-html="customer.emailAddress | highlight: $select.search"></small>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+
+            </div>
+            <div class="col-xs-6">
+
+              <div class="form-group">
+                  <label for="">Vehicle</label>
+                  <ui-select ng-model="salesDetailsCtrl.selectedVehicle" theme="bootstrap">
+                      <ui-select-match placeholder="Search a Vehicle...">{{$select.selected.year}} {{$select.selected.make}} {{$select.selected.model}}</ui-select-match>
+                      <ui-select-choices repeat="vehicle in salesDetailsCtrl.vehicles | filter: $select.search">
+                          <div ng-bind-html="vehicle.make + ' ' + vehicle.model  | highlight: $select.search"></div>
+                          <small ng-bind-html="vehicle.year | highlight: $select.search"></small>
+                      </ui-select-choices>
+                  </ui-select>
+              </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="invoiceDate">Invoice Date</label>
+                    <input id="invoiceDate" type="text" class="form-control" ng-model="salesDetailsCtrl.sale.invoiceDate">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="paymentdate">Payment Date</label>
+                    <input id="paymentdate" type="date" class="form-control" ng-model="salesDetailsCtrl.sale.paymentReceivedDate">
+                </div>
+            </div>
+            <!-- <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="EmailAddress">Email Address</label>
+                    <input id="EmailAddress" type="text" class="form-control" ng-model="salesDetailsCtrl.sale.emailAddress">
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="Telephone">Telephone</label>
+                    <input id="Telephone" type="text" class="form-control" ng-model="salesDetailsCtrl.customer.telephone">
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+        <button class="btn btn-success pull-right" ng-click="customersDetailCtrl.save()">
+        Save <i class="glyphicon glyphicon-save"></i>
+      </button>
+    </div>
+</div>

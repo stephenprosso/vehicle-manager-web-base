@@ -15,7 +15,6 @@
 
         function activate() {
             var customerId = $stateParams.id;
-
             customersFactory
                 .getById(customerId)
                 .then(function(customer) {
@@ -23,7 +22,6 @@
                 })
                 .catch(function(error) {
                     alert(error);
-
                 });
         }
 

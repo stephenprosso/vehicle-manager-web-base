@@ -1,26 +1,36 @@
+
+<button ui-sref="sales.detail" class="btn btn-primary pull-right">
+  <i class="glyphicon glyphicon-plus"></i> Add Sale
+</button>
 <table class="table table-striped">
 
     <thead>
         <tr>
-            <th>Sales Date</th>
+            <th></th>
+            <th>Customer Name</th>
+            <th>Vehicle Name</th>
+            <th>Sale Price</th>
+            <th>Payment Received Date</th>
             <th>Invoice Date</th>
-            <th>Payment Date</th>
-            <th width ="1%"></th>
-            <th width ="1%"></th>
+            <th width="1%"></th>
+            <th width="1%"></th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat ="sale in salesGridCtrl.sales">
-          <td>{{sale.saleDate}}</td>
-          <td>{{sale.invoiceDate}}</td>
-            <td>no angular</td>
+        <tr ng-repeat="sale in salesGridCtrl.sales">
+            <td>{{$index+1}}</td>
+            <td>{{sale.customerName}}</td>
+            <td>{{sale.vehicleName}}</td>
+            <td>{{sale.salePrice |currency: "$"}}</td>
+            <td>{{sale.paymentReceivedDate | date}}</td>
+            <td>{{sale.invoiceDate | date}}</td>
             <td>
-                <a ui-sref="sales.detail({id: SalesId})" class="btn btn-primary">
+                <a ui-sref="sales.detail({id: sale.saleId})" class="btn btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>
                 </a>
             </td>
             <td>
-                <a href="" class="btn btn-danger">
+                <a ng-click="salesGridCtrl.remove(sale)" class="btn btn-danger">
                     <i class="glyphicon glyphicon-trash"></i>
                 </a>
             </td>
