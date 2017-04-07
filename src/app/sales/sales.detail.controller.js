@@ -38,9 +38,7 @@
                     .catch(function(error) {
                         alert(error);
                     });
-
             }
-
         }
 
         function save() {
@@ -48,9 +46,9 @@
             var saleId = $stateParams.id;
 
             vm.sale.customerId = vm.selectedCustomer.customerId;
-            vm.sale.vehicleId = vm.selectedVhicle.vehicleId;
+            vm.sale.vehicleId = vm.selectedVehicle.vehicleId;
 
-            if (salesId) {
+            if (saleId) {
                 salesFactory
                     .update(vm.sale.saleId, vm.sale)
                     .then(function() {
