@@ -10,6 +10,7 @@
     /* @ngInject */
     function SalesDetailsController(salesFactory, vehiclesFactory, customersFactory, $stateParams, SweetAlert) {
         var vm = this;
+        vm.save = save;
         vm.title = "New Sale";
         activate();
 
