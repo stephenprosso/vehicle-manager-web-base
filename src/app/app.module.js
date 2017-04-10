@@ -12,7 +12,7 @@
             'app.vehicles',
             'app.sales'
         ])
-        .value('apiUrl', 'https://sr-vehicle-api.azurewebsites.net/api/')
+        .value('apiUrl', 'https://sr-vehicle-manager-api.azurewebsites.net/api/')
         .config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/dashboard');
 
